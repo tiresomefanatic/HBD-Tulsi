@@ -1,4 +1,3 @@
-// components/MessageList.tsx
 import React, { useEffect, useState, useRef } from 'react';
 
 type Message = {
@@ -18,6 +17,7 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
   const cardRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
+    const currentCard = cardRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,13 +30,13 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
       }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCard) {
+      observer.observe(currentCard);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (currentCard) {
+        observer.unobserve(currentCard);
       }
     };
   }, []);
@@ -53,10 +53,9 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
         color: message.style.textColor,
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.1)',
       }}
     >
-      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
         fontSize: '150px',
         display: 'flex',
         justifyContent: 'center',
@@ -81,9 +80,9 @@ const MessageList: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-transparent py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-teal-900 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-8 text-center">Wishes from your friends</h2>
+        <h2 className="text-4xl font-bold text-white mb-8 text-center">Birthday Messages</h2>
         <ul className="space-y-8">
           {messages.map((msg) => (
             <MessageCard key={msg._id} message={msg} />
