@@ -10,14 +10,14 @@ const SpecialMessage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-pink-500 mb-6">
+          <h2 className="text-6xl md:text-5xl font-bold text-pink-500 mb-6">
             Celebrating Your Quarter Century!
           </h2>
-          <p className="text-xl md:text-2xl text-white leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed mb-8">
             Tulsi, as you turn 25, may this milestone birthday be the beginning of a new chapter filled with exciting adventures, deeper wisdom, and boundless joy. Your journey so far has been incredible, and the best is yet to come!
           </p>
           <div className="text-3xl mb-4">🌟🎉🥂</div>
-          <p className="text-lg md:text-xl text-white font-semibold">
+          <p className="text-xl md:text-2xl text-white font-semibold">
             Here&apos;s to 25 years of being absolutely amazing, and to many more years of making the world brighter with your presence!
           </p>
         </motion.div>

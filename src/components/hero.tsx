@@ -30,7 +30,7 @@ const BirthdayHero = ({ name = 'Tulsi' }) => {
         return clearInterval(interval);
       }
 
-      const particleCount = 50 * (timeLeft / duration);
+      const particleCount = 100 * (timeLeft / duration);
       
       // Fireworks
       confetti(Object.assign({}, defaults, {
@@ -50,14 +50,14 @@ const BirthdayHero = ({ name = 'Tulsi' }) => {
     const frame = () => {
       if (Date.now() > end) return;
       confetti({
-        particleCount: 2,
+        particleCount: 4,
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.5 },
         colors: colors,
       });
       confetti({
-        particleCount: 2,
+        particleCount: 4,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.5 },
