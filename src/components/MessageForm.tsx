@@ -145,7 +145,7 @@ const MessageForm: React.FC = () => {
               overflow: 'hidden',
             }}
           >
-            <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+            <div className="absolute inset-0 opacity-40 pointer-events-none" style={{
               fontSize: '100px',
               display: 'flex',
               justifyContent: 'center',
