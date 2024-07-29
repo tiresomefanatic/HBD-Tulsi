@@ -10,7 +10,7 @@ const SpecialMessage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-pink-600 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-500 mb-6">
             Celebrating Your Quarter Century!
           </h2>
           <p className="text-xl md:text-2xl text-white leading-relaxed mb-8">
