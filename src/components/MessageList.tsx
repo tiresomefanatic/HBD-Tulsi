@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Loader2 } from 'lucide-react';
 
 type Message = {
   _id: string;
@@ -55,7 +56,7 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
         overflow: 'hidden',
       }}
     >
-      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
         fontSize: '150px',
         display: 'flex',
         justifyContent: 'center',
@@ -71,22 +72,48 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
 
 const MessageList: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setIsLoading(true);
+    setError(null);
     fetch('/api/messages')
-      .then(response => response.json())
-      .then(data => setMessages(data))
-      .catch(error => console.error('Error fetching messages:', error));
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch messages');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setMessages(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching messages:', error);
+        setError('Failed to load messages. Please try again later.');
+        setIsLoading(false);
+      });
   }, []);
 
   return (
-    <div className="bg-transparent py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-4xl mx-auto">
-        <ul className="space-y-8">
-          {messages.map((msg) => (
-            <MessageCard key={msg._id} message={msg} />
-          ))}
-        </ul>
+        {isLoading ? (
+          <div className="flex justify-center items-center h-64">
+            <Loader2 className="w-24 h-24 text-primary animate-spin" />
+          </div>
+        ) : error ? (
+          <p className="text-center text-destructive">{error}</p>
+        ) : messages.length > 0 ? (
+          <ul className="space-y-8">
+            {messages.map((msg) => (
+              <MessageCard key={msg._id} message={msg} />
+            ))}
+          </ul>
+        ) : (
+          <p className="text-center text-foreground">No messages yet. Be the first to leave a birthday wish!</p>
+        )}
       </div>
     </div>
   );
