@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
+import { AlertTriangle } from 'lucide-react';
+
 
 type MessageStyle = {
   backgroundColor: string;
@@ -158,6 +160,13 @@ const MessageForm: React.FC = () => {
         <button type="submit" className="w-full bg-pink-400 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-pink-600 transition-colors">
           Send Wishes
         </button>
+        <div className="flex items-center space-x-2 text-red-600">
+          <AlertTriangle size={20} />
+          <p className="text-sm">
+            Please double-check your message before submitting. It cannot be edited or removed later.
+          </p>
+        </div>
+        
       </form>
     </div>
   );

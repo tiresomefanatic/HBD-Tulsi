@@ -55,7 +55,7 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
         overflow: 'hidden',
       }}
     >
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
         fontSize: '150px',
         display: 'flex',
         justifyContent: 'center',
@@ -82,7 +82,7 @@ const MessageList: React.FC = () => {
   return (
     <div className="bg-transparent py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-white mb-8 text-center">Birthday Messages</h2>
+        <h2 className="text-4xl font-bold text-white mb-8 text-center">Wishes from your friends</h2>
         <ul className="space-y-8">
           {messages.map((msg) => (
             <MessageCard key={msg._id} message={msg} />
