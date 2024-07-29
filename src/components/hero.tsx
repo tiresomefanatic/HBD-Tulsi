@@ -79,11 +79,14 @@ const BirthdayHero = ({ name = 'Tulsi' }) => {
           Happy Birthday
         </h1>
         <SparklesText 
-          className="text-[20vw] sm:text-[15vw] md:text-8xl lg:text-9xl xl:text-[10rem] font-extrabold bg-clip-text mb-4 sm:mb-6 md:mb-8 leading-none text-pink-500" 
+          className="text-[20vw] sm:text-[15vw] md:text-8xl lg:text-9xl xl:text-[10rem] font-extrabold bg-clip-text mb-4 sm:mb-6 md:mb-8 leading-none text-pink-400" 
           text={name} 
         />
         <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
-          Wishing you a day filled with joy and laughter!
+          Wishing you a day filled with joy, laughter and lots and lots of love
+        </p>
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+          ❤️❤️❤️❤️❤️
         </p>
       </div>
       <Confetti

@@ -62,36 +62,36 @@ const MessageForm: React.FC = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-8 p-8 rounded-lg backdrop-blur-md bg-white bg-opacity-20">
-      <h2 className="text-3xl font-bold mb-6 text-white">Leave Birthday Wishes for Tulsi</h2>
+      <h2 className="text-3xl font-bold mb-6 text-pink-400">Leave Birthday Wishes for Tulsi</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-white font-semibold mb-2">Your Name</label>
+          <label htmlFor="name" className="block text-pink-400 font-semibold mb-2">Your Name</label>
           <input
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full px-4 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+            className="w-full px-4 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-400"
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-white font-semibold mb-2">Your Message</label>
+          <label htmlFor="message" className="block text-pink-400 font-semibold mb-2">Your Message</label>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            className="w-full px-4 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-500"
+            className="w-full px-4 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-400"
             rows={4}
           ></textarea>
         </div>
         <div>
-          <h3 className="text-white font-semibold mb-4">Customize Your Message Card</h3>
+          <h3 className="text-pink-400 font-semibold mb-4">Customize Your Message Card</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {colorOptions.map(({ key, title }) => (
               <div key={key} className="flex flex-col items-start">
-                <label className="mb-1 text-white">{title}</label>
+                <label className="mb-1 text-pink-400">{title}</label>
                 <button
                   type="button"
                   onClick={() => setShowColorPicker(key)}
@@ -112,11 +112,11 @@ const MessageForm: React.FC = () => {
               </div>
             ))}
             <div className="flex flex-col items-start">
-              <label className="mb-1 text-white">Background Emoji</label>
+              <label className="mb-1 text-pink-400">Background Emoji</label>
               <button
                 type="button"
                 onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                className="w-full px-3 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-500 text-2xl"
+                className="w-full px-3 py-2 rounded bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-pink-400 text-2xl"
               >
                 {style.emoji}
               </button>
@@ -130,7 +130,7 @@ const MessageForm: React.FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-white font-semibold mb-2">Preview</h3>
+          <h3 className="text-pink-400 font-semibold mb-2">Preview</h3>
           <div 
             className="p-4 rounded"
             style={{
@@ -155,7 +155,7 @@ const MessageForm: React.FC = () => {
             <p>{message || 'Your message will appear here'}</p>
           </div>
         </div>
-        <button type="submit" className="w-full bg-pink-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-pink-600 transition-colors">
+        <button type="submit" className="w-full bg-pink-400 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-pink-600 transition-colors">
           Send Wishes
         </button>
       </form>
