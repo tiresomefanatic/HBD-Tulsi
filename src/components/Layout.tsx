@@ -4,7 +4,7 @@ const EmojiBackground = () => {
   const [emojiElements, setEmojiElements] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    const emojis = ['🎂', '🎈', '🎁', '🎉', '🍰', '🧁', '🍭', '🎊'];
+    const emojis = ['🎂', '🎈', '🎁', '🎉', '🍰', '🧁', '🍭', '🎊', '❤️'];
     const newEmojiElements = [];
 
     for (let i = 0; i < 50; i++) {
