@@ -52,6 +52,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+         // Add custom teal colors
+         'teal-light': '#b2f5ea',
+         'teal-medium': '#38b2ac',
+         'teal-dark': '#2c7a7b',
       },
       borderRadius: {
         lg: "var(--radius)",
