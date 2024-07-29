@@ -53,6 +53,7 @@ const MessageCard: React.FC<{ message: Message }> = ({ message }) => {
         color: message.style.textColor,
         position: 'relative',
         overflow: 'hidden',
+        boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.1)',
       }}
     >
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
